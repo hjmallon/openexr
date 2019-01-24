@@ -217,38 +217,42 @@ INSTALL ( FILES
   )
 
 # Documentation
-INSTALL ( FILES
-  doc/TechnicalIntroduction.pdf
-  doc/ReadingAndWritingImageFiles.pdf
-  doc/OpenEXRFileLayout.pdf
-  doc/MultiViewOpenEXR.pdf
-  doc/InterpretingDeepPixels.pdf
-  doc/TheoryDeepPixels.pdf
-  DESTINATION
-  ${CMAKE_INSTALL_PREFIX}/share/doc/OpenEXR-${OPENEXR_VERSION}
-  )
+IF (OPENEXR_INSTALL_DOCS)
+  INSTALL ( FILES
+    doc/TechnicalIntroduction.pdf
+    doc/ReadingAndWritingImageFiles.pdf
+    doc/OpenEXRFileLayout.pdf
+    doc/MultiViewOpenEXR.pdf
+    doc/InterpretingDeepPixels.pdf
+    doc/TheoryDeepPixels.pdf
+    DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/share/doc/OpenEXR-${OPENEXR_VERSION}
+    )
+ENDIF()
 
 # Examples
-INSTALL ( FILES
-  IlmImfExamples/main.cpp
-  IlmImfExamples/drawImage.cpp
-  IlmImfExamples/rgbaInterfaceExamples.cpp
-  IlmImfExamples/rgbaInterfaceTiledExamples.cpp
-  IlmImfExamples/generalInterfaceExamples.cpp
-  IlmImfExamples/lowLevelIoExamples.cpp
-  IlmImfExamples/previewImageExamples.cpp
-  IlmImfExamples/generalInterfaceTiledExamples.cpp
-  IlmImfExamples/generalInterfaceTiledExamples.h
-  IlmImfExamples/drawImage.h
-  IlmImfExamples/rgbaInterfaceExamples.h
-  IlmImfExamples/generalInterfaceExamples.h
-  IlmImfExamples/rgbaInterfaceTiledExamples.h
-  IlmImfExamples/lowLevelIoExamples.h
-  IlmImfExamples/previewImageExamples.h
-  IlmImfExamples/namespaceAlias.h
-  DESTINATION
-  ${CMAKE_INSTALL_PREFIX}/share/doc/OpenEXR-${OPENEXR_VERSION}/examples
-  )
+IF (OPENEXR_INSTALL_DOCS)
+  INSTALL ( FILES
+    IlmImfExamples/main.cpp
+    IlmImfExamples/drawImage.cpp
+    IlmImfExamples/rgbaInterfaceExamples.cpp
+    IlmImfExamples/rgbaInterfaceTiledExamples.cpp
+    IlmImfExamples/generalInterfaceExamples.cpp
+    IlmImfExamples/lowLevelIoExamples.cpp
+    IlmImfExamples/previewImageExamples.cpp
+    IlmImfExamples/generalInterfaceTiledExamples.cpp
+    IlmImfExamples/generalInterfaceTiledExamples.h
+    IlmImfExamples/drawImage.h
+    IlmImfExamples/rgbaInterfaceExamples.h
+    IlmImfExamples/generalInterfaceExamples.h
+    IlmImfExamples/rgbaInterfaceTiledExamples.h
+    IlmImfExamples/lowLevelIoExamples.h
+    IlmImfExamples/previewImageExamples.h
+    IlmImfExamples/namespaceAlias.h
+    DESTINATION
+    ${CMAKE_INSTALL_PREFIX}/share/doc/OpenEXR-${OPENEXR_VERSION}/examples
+    )
+ENDIF()
 
 SET ( VERSION_CONFIG "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake")
 SET ( PROJECT_CONFIG "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake")

@@ -19,6 +19,7 @@ option(OPENEXR_BUILD_SHARED         "Build Shared Libraries"     ON)
 option(OPENEXR_BUILD_STATIC         "Build Static Libraries"     OFF)
 option(OPENEXR_NAMESPACE_VERSIONING "Use Namespace Versioning"   ON)
 option(OPENEXR_FORCE_CXX03          "Force CXX03"                OFF)
+option(OPENEXR_INSTALL_DOCS         "Install docs and examples"  ON)
 set(OPENEXR_PYTHON_MAJOR "2" CACHE STRING "Python major version")
 set(OPENEXR_PYTHON_MINOR "7" CACHE STRING "Python minor version")
 
